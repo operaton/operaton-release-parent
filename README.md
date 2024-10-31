@@ -1,20 +1,20 @@
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.camunda/camunda-release-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.camunda/camunda-release-parent)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.operaton/operaton-release-parent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.operaton/operaton-release-parent)
 
-camunda-release-parent
+operaton-release-parent
 ======================
 
-Pom which can be inherited for camunda releases defining some common release properties.
+Pom which can be inherited for operaton releases defining some common release properties.
 It allows to deploy to two repositories simultaneously. One is a Nexus OSS server, the other one a Nexus Enterprise server.
 It will deploy the artifacts at the end of the build to keep the window of failure small when talking to external systems.
 
 Usage
 -----
 
-Inherit the camunda-release-parent pom inside your project like so  
+Inherit the operaton-release-parent pom inside your project like so  
   
     <parent>
-      <groupId>org.camunda</groupId>
-      <artifactId>camunda-release-parent</artifactId>
+      <groupId>org.operaton</groupId>
+      <artifactId>operaton-release-parent</artifactId>
       <version>${LATEST_VERSION}</version>
       <!-- do not remove empty tag - http://jira.codehaus.org/browse/MNG-4687 -->
      <relativePath />
@@ -25,9 +25,9 @@ If you have a multi-module build, just inherit in your parent pom.
 Specify the <scm> section for your project eg.
     
     <scm>
-      <url>https://github.com/camunda/MY_PROJECT_URL</url>
-      <connection>scm:git:git@github.com:camunda/MY_PROJECT_URL.git</connection>
-      <developerConnection>scm:git:git@github.com:camunda/MY_PROJECT_URL.git</developerConnection>
+      <url>https://github.com/operaton/MY_PROJECT_URL</url>
+      <connection>scm:git:git@github.com:operaton/MY_PROJECT_URL.git</connection>
+      <developerConnection>scm:git:git@github.com:operaton/MY_PROJECT_URL.git</developerConnection>
     </scm>
 
 Release
@@ -44,7 +44,7 @@ Prerequisite:
         ...
         
         <server>
-          <id>camunda-nexus</id>
+          <id>operaton-nexus</id>
           <username>MY_CAMUNDA_NEXUS_USER</username>
           <password>MY_CAMUNDA_NEXUS_PASSWORD</password>
         </server>
@@ -78,7 +78,7 @@ To release your own project use the following command:
     -Darguments="--settings=${PATH_TO_YOUR_SETTINGS_XML_FILE}" \
     --settings=${PATH_TO_YOUR_SETTINGS_XML_FILE}
     
-This will trigger the `sonatpye-oss-release` profile inside the `camunda-release-parent` pom automatically.
+This will trigger the `sonatpye-oss-release` profile inside the `operaton-release-parent` pom automatically.
     
 Customization
 -------------
@@ -90,10 +90,10 @@ You can override some default behaviours through the usage of the command line p
     <th>Property</th><th>Description</th>
   </tr>
   <tr>
-    <td>nexus.snapshot.repository</td><td>Specify the url to your snapshot repository.<br/>Default is <strong>https://artifacts.camunda.com/artifactory/camunda-bpm-snapshots</strong>.</td>
+    <td>nexus.snapshot.repository</td><td>Specify the url to your snapshot repository.<br/>Default is <strong>https://artifacts.operaton.com/artifactory/operaton-bpm-snapshots</strong>.</td>
   </tr>
   <tr>
-    <td>nexus.release.repository</td><td>Specify the url to your release repository.<br/>Default is <strong>https://artifacts.camunda.com/artifactory/camunda-bpm</strong>.</td>
+    <td>nexus.release.repository</td><td>Specify the url to your release repository.<br/>Default is <strong>https://artifacts.operaton.com/artifactory/operaton-bpm</strong>.</td>
   </tr>
   <tr>
     <td>skip.nexus.release</td><td>When setting the value to true, skip the deployment to the release repository specified in <distributionManagement>.<br/>Default is <strong>false</strong>.</td>
