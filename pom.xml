@@ -45,7 +45,7 @@
     <plugin.version.rar>3.0.0</plugin.version.rar>
     <plugin.version.gpg>3.0.1</plugin.version.gpg>
     <plugin.version.release>3.1.1</plugin.version.release>
-    <plugin.version.nexus-staging>1.6.13</plugin.version.nexus-staging>
+    <plugin.version.nexus-staging>1.7.0</plugin.version.nexus-staging>
   </properties>
 
   <build>
